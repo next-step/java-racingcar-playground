@@ -5,10 +5,11 @@ import java.util.List;
 
 public class Game {
 
-    private List<Car> cars;
+    private final List<Car> cars;
+    private int playCount;
 
     public Game() {
-        cars = new ArrayList<>();
+        this.cars = new ArrayList<>();
     }
 
     public List<Car> getCars() {
@@ -19,5 +20,27 @@ public class Game {
         for(String name : input.split(",")) {
             this.cars.add(new Car(name));
         }
+    }
+
+    public void setPlayCount(int playCount) {
+        this.playCount = playCount;
+    }
+
+    public int getPlayCount() {
+        return this.playCount;
+    }
+
+    public void play() {
+        for (int i = 0; i < this.playCount; i++) {
+            playGames();
+        }
+    }
+
+    private void playGames() {
+        for (Car car : this.cars) {
+            car.play();
+            car.print();
+        }
+        System.out.println();
     }
 }
