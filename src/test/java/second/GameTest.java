@@ -20,7 +20,6 @@ class GameTest {
 
     @Test
     void 이름_다섯자_유효_테스트() {
-        Car car = new Car("holux");
         assertThat("holux".length() > 5).isFalse();
     }
 
@@ -76,30 +75,30 @@ class GameTest {
         assertThat(winners).contains(pobi, crong, holux);
     }
 
-    @Test
-    void 승자출력_1위_1명() {
-        game.addCar(new Car("pobi", 5));
-        game.addCar(new Car("crong", 4));
-        game.addCar(new Car("holux", 4));
-
-        List<Car> winners = game.getWinners();
-        game.printWinners(winners);
-    }
-
-    @Test
-    void 승자출력_1위_2명() {
-        game.addCar(new Car("pobi", 5));
-        game.addCar(new Car("crong", 5));
-        game.addCar(new Car("holux", 4));
-
-        List<Car> winners = game.getWinners();
-        game.printWinners(winners);
-    }
-
-    @Test
-    void 플레이_테스트() {
-        game.addCars("pobi,crong,holux");
-        game.setPlayCount(5);
-        game.play();
-    }
+//    @Test
+//    void 승자출력_1위_1명() {
+//        game.addCar(new Car("pobi", 5));
+//        game.addCar(new Car("crong", 4));
+//        game.addCar(new Car("holux", 4));
+//
+//        List<Car> winners = game.getWinners();
+//        game.printWinners(winners);
+//    }
+//
+//    @Test
+//    void 승자출력_1위_2명() {
+//        game.addCar(new Car("pobi", 5));
+//        game.addCar(new Car("crong", 5));
+//        game.addCar(new Car("holux", 4));
+//
+//        List<Car> winners = game.getWinners();
+//        game.printWinners(winners);
+//    }
+//
+//    @Test
+//    void 플레이_테스트() {
+//        game.addCars("pobi,crong,holux");
+//        game.setPlayCount(5);
+//        game.play();
+//    }
 }

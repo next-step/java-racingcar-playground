@@ -11,10 +11,7 @@ public class Game {
 
     public Game() {
         this.cars = new ArrayList<>();
-    }
-
-    public List<Car> getCars() {
-        return this.cars;
+        this.playCount = 5;
     }
 
     public void addCar(Car car) {
@@ -25,6 +22,10 @@ public class Game {
         for(String name : input.split(",")) {
             this.cars.add(new Car(name.trim()));
         }
+    }
+
+    public List<Car> getCars() {
+        return this.cars;
     }
 
     public void setPlayCount(int playCount) {
@@ -40,20 +41,15 @@ public class Game {
     private void carMove() {
         for (Car car : this.cars) {
             car.move();
-            car.print();
         }
         System.out.println();
     }
 
     public List<Car> getWinners() {
         int maxPosition = getMaxPosition();
-        List<Car> winner = new ArrayList<>();
-        for (Car car : cars) {
-            if (car.getPosition() == maxPosition) {
-                winner.add(car);
-            }
-        }
-        return winner;
+        return cars.stream()
+                .filter(c -> c.getPosition() == maxPosition)
+                .collect(Collectors.toList());
     }
 
     public void printWinners(List<Car> winners) {
@@ -65,12 +61,9 @@ public class Game {
     }
 
     private int getMaxPosition() {
-        int max = 0;
-        for (Car car : cars) {
-            if (car.getPosition()>max) {
-                max = car.getPosition();
-            }
-        }
-        return max;
+        return cars.stream()
+                .mapToInt(c -> c.getPosition())
+                .max()
+                .orElse(0);
     }
 }
