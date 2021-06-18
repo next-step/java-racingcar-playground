@@ -19,6 +19,11 @@ public class Car {
         random = new Random();
     }
 
+    public Car(String name, int position) {
+        this.name = name;
+        this.position = position;
+    }
+
     private boolean isValidName(String name) {
         if (!isValidLength(name)) {
             throw new IllegalStateException("이름은 다섯자를 넘을 수 없습니다");
@@ -34,7 +39,7 @@ public class Car {
         return this.name;
     }
 
-    public void play() {
+    public void move() {
         this.position += random.nextInt(2);
     }
 
