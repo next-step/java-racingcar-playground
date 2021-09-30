@@ -17,5 +17,5 @@ public class ValidationCheck {
         assertThatCode(() -> Validation.CheckName(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("잘못된 이름 입니다 다시 입력 해 주세요");
         assertThatCode(() -> Validation.CheckName(" ")).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("잘못된 이름 입니다 다시 입력 해 주세요");
         assertThatCode(() -> Validation.CheckName("")).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("잘못된 이름 입니다 다시 입력 해 주세요");
-    a
+    }
 }

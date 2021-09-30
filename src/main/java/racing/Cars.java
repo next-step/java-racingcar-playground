@@ -13,4 +13,8 @@ public class Cars {
     public List<Car> getCar() {
         return carList;
     }
+
+    public void move(List<Car> carList) {
+        carList.stream().forEach(car -> car.move((int) Math.round(Math.random())));
+    }
 }
