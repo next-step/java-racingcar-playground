@@ -16,4 +16,13 @@ public class LocationCar {
     public LocationCar move(int v) {
         return new LocationCar(this.location + v);
     }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (int i = 0; i <location ; i++) {
+            s += "-";
+        }
+        return s;
+    }
 }

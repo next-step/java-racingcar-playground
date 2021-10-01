@@ -26,9 +26,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "name='" + name + '\'' +
-                ", location=" + getLocation() +
-                '}';
+        return  name + ": " + location +'\n';
     }
 }
