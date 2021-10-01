@@ -14,4 +14,9 @@ public class Validation {
     private static void ValidationName(boolean b, String s) {
         if (b) throw new IllegalArgumentException(s);
     }
+
+    public static int checkNegative(int parseInt) {
+        if(parseInt < 0) throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
+        return parseInt;
+    }
 }
