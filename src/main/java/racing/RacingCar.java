@@ -1,14 +1,16 @@
 package racing;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RacingCar {
 
     public static void run() {
 
         try {
-            List<Car> carList = Create.NewCar(InputView.start());
+            List<Car> carList = NewCar(InputView.start());
             Cars cars = new Cars(carList);
             OutPutView.result(cars,InputView.count());
         } catch (IOException e) {
@@ -18,6 +20,10 @@ public class RacingCar {
             System.out.println(illegalArgumentException.getMessage());
             run();
         }
+    }
+
+    public static List<Car> NewCar(String[] car) {
+        return Arrays.stream(car).map(a -> new Car(a)).collect(Collectors.toList());
     }
 
     private static class InputView {

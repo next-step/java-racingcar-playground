@@ -1,6 +1,5 @@
 package racing;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,11 +22,14 @@ public class Cars {
         return carList.stream().mapToInt(car -> car.getLocation()).max().getAsInt();
     }
 
-
     public List<String> WinName(int distance) {
         return carList.stream().
-                filter(car -> car.getLocation() == distance).
+                filter(car -> isSameDistance(distance, car)).
                 map(name -> name.getName()).
                 collect(Collectors.toList());
+    }
+
+    private boolean isSameDistance(int distance, Car car) {
+        return car.getLocation() == distance;
     }
 }

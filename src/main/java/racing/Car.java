@@ -3,17 +3,17 @@ package racing;
 import javax.xml.stream.Location;
 
 public class Car {
-    private final String name;
-    private LocationCar location;
+    private  LocationCar location;
+    private final CarName name;
 
     public Car(String name) {
         Validation.CheckName(name);
-        this.name =name;
+        this.name = new CarName(name);
         this.location = new LocationCar(0);
     }
 
     public String getName() {
-        return name;
+        return name.toString();
     }
 
     public int getLocation() {

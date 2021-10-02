@@ -17,7 +17,7 @@ public class CarsTest {
     public void setUp() {
         String carsName = "a,b,c";
         String[] car = carsName.split(",");
-        carList = Create.NewCar(car);
+        carList = RacingCar.NewCar(car);
         cars = new Cars(carList);
     }
     @Test
