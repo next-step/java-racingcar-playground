@@ -1,4 +1,4 @@
-	package racingcar;
+	package racingcar.domain;
 
 	public class Car {
 		private final String name;
@@ -26,7 +26,15 @@
 			}
 		}
 
+		public String getName() {
+			return name;
+		}
+
 		public Position getPosition() {
 			return this.position;
+		}
+
+		public int getDistance() {
+			return position.getPosition();
 		}
 	}
