@@ -1,5 +1,6 @@
-package racingcar;
+package racingcar.domain;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,12 +12,20 @@ public class Cars {
 		this.cars = cars;
 	}
 
-	public List<Car> findWinners() {
+	public Cars(String[] names) {
+		cars = Arrays.stream(names)
+			.map(Car::new)
+			.collect(Collectors.toList());
+	}
+
+	public Cars findWinners() {
 		Position maxPosition = getMaxPosition();
 
-		return cars.stream()
+		return new Cars(
+			cars.stream()
 			.filter(car -> car.getPosition().equals(maxPosition))
-			.collect(Collectors.toList());
+			.collect(Collectors.toList())
+		);
 	}
 
 	public Position getMaxPosition() {

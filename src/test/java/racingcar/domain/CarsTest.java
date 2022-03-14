@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,13 +10,25 @@ import org.junit.jupiter.api.Test;
 
 public class CarsTest {
 	@Test
+	void create() {
+		Cars cars = new Cars(new String[]{"ws", "mh", "dh"});
+		List<Car> carList = cars.getCars();
+
+		assertAll(
+			() -> assertThat(carList.get(0).getName()).isEqualTo("ws"),
+			() -> assertThat(carList.get(1).getName()).isEqualTo("mh"),
+			() -> assertThat(carList.get(2).getName()).isEqualTo("dh")
+		);
+	}
+
+	@Test
 	void findWinners() {
 		Car ws = new Car("ws", 5);
 		Car mh = new Car("mh", 5);
 		Car dh = new Car("dh", 3);
 		Cars cars = new Cars(Arrays.asList(ws, mh, dh));
 
-		assertThat(cars.findWinners()).containsExactly(ws, mh);
+		assertThat(cars.findWinners().getCars()).containsExactly(ws, mh);
 	}
 
 	@Test
