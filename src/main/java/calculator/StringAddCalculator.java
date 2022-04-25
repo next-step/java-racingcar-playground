@@ -21,7 +21,7 @@ public class StringAddCalculator {
     }
 
     private static String[] splitText(String text) {
-        return text.split(",");
+        return text.split(",|:");
     }
 
     private static boolean isSingleNumber(String text) {
