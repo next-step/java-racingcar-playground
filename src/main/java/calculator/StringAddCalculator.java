@@ -11,7 +11,17 @@ public class StringAddCalculator {
             return Integer.parseInt(text);
         }
 
-        return 0;
+        int sum = 0;
+        String[] nums = splitText(text);
+        for (String num : nums) {
+            sum += Integer.parseInt(num);
+        }
+
+        return sum;
+    }
+
+    private static String[] splitText(String text) {
+        return text.split(",");
     }
 
     private static boolean isSingleNumber(String text) {
