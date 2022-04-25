@@ -11,6 +11,10 @@ public class StringAddCalculator {
             return 0;
         }
 
+        if (text.length() == 1) {
+            return Integer.parseInt(text);
+        }
+
         return 0;
     }
 }
