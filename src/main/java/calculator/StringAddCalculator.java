@@ -1,7 +1,10 @@
 package calculator;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class StringAddCalculator {
     public static int splitAndSum(String text) {
@@ -15,15 +18,15 @@ public class StringAddCalculator {
         }
 
         int sum = 0;
-        String[] nums = getStringNumbers(text);
-        for (String num : nums) {
-            sum += Integer.parseInt(num);
+        List<Integer> nums = getStringNumbers(text);
+        for (Integer num : nums) {
+            sum += num;
         }
 
         return sum;
     }
 
-    private static String[] getStringNumbers(String text) {
+    private static List<Integer> getStringNumbers(String text) {
         Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
         if (m.find()) {
             return splitText(m.group(2));
@@ -32,8 +35,17 @@ public class StringAddCalculator {
         return splitText(text);
     }
 
-    private static String[] splitText(String text) {
-        return text.split(",|;|:");
+    private static List<Integer> splitText(String text) {
+        return Arrays.stream(text.split(",|;|:"))
+                    .map(num -> {
+                        int n = Integer.parseInt(num);
+                        if (n < 0) {
+                            throw new RuntimeException();
+                        }
+
+                        return n;
+                    })
+                    .collect(Collectors.toList());
     }
 
     private static boolean isSingleNumber(String text) {
