@@ -17,8 +17,13 @@ public class StringAddCalculator {
             return Integer.parseInt(text);
         }
 
+        return getSum(text);
+    }
+
+    private static int getSum(String text) {
         int sum = 0;
-        List<Integer> nums = getStringNumbers(text);
+
+        List<Integer> nums = getNumbers(text);
         for (Integer num : nums) {
             sum += num;
         }
@@ -26,7 +31,7 @@ public class StringAddCalculator {
         return sum;
     }
 
-    private static List<Integer> getStringNumbers(String text) {
+    private static List<Integer> getNumbers(String text) {
         Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
         if (m.find()) {
             return splitText(m.group(2));
@@ -38,14 +43,18 @@ public class StringAddCalculator {
     private static List<Integer> splitText(String text) {
         return Arrays.stream(text.split(",|;|:"))
                     .map(num -> {
-                        int n = Integer.parseInt(num);
-                        if (n < 0) {
-                            throw new RuntimeException();
-                        }
-
-                        return n;
+                        return verifyNumber(num);
                     })
                     .collect(Collectors.toList());
+    }
+
+    private static int verifyNumber(String text) {
+        int num = Integer.parseInt(text);
+        if (num < 0) {
+            throw new RuntimeException("Negative numbers cannot be passed.");
+        }
+
+        return num;
     }
 
     private static boolean isSingleNumber(String text) {
