@@ -3,10 +3,10 @@ package racingcar;
 import java.util.Objects;
 
 public class Car {
-    private final String name;
+    private final CarName name;
 
     public Car(String name) {
-        this.name = name;
+        this.name = new CarName(name);
     }
 
     @Override
