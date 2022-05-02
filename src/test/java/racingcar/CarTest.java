@@ -13,4 +13,11 @@ public class CarTest {
         Car car = new Car("aaron");
         assertThat(car).isEqualTo(new Car("aaron"));
     }
+
+    @Test
+    @DisplayName("자동차의 처음 위치는 0")
+    void init_car_location_is_0() {
+        Car car = new Car("aaron");
+        assertThat(car).isEqualTo(new Car("aaron", 0));
+    }
 }
