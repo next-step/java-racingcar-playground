@@ -9,9 +9,17 @@ public class NameTest {
 
     @Test
     @DisplayName("자동차 이름은 5자를 초과할 수 없다.")
-    void theNameOfTheCarCannotExceedFiveCharacters() {
+    void carNameCannotExceedFiveCharacters() {
         assertThatThrownBy(() -> new CarName("aarona"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("자동차 이름은 5자를 초과할 수 없습니다.");
+    }
+
+    @Test
+    @DisplayName("자동차 이름은 공백일 수 없다.")
+    void carNameCannotBeBlank() {
+        assertThatThrownBy(() -> new CarName(""))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("자동차 이름은 공백일 수 없습니다.");
     }
 }
