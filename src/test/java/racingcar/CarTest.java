@@ -20,4 +20,11 @@ public class CarTest {
         Car car = new Car("aaron");
         assertThat(car).isEqualTo(new Car("aaron", 0));
     }
+
+    @Test
+    @DisplayName("자동차는 자신의 상태를 출력")
+    void car_can_pring_state() {
+        Car car = new Car("aaron", 4);
+        assertThat(car.toString()).isEqualTo("aaron : ----");
+    }
 }
