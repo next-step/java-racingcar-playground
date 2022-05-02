@@ -4,10 +4,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Objects;
 
-public class CarName {
+public class Name {
     private final String name;
 
-    public CarName(String name) {
+    public Name(String name) {
         if (name.length() > 5) {
             throw new IllegalArgumentException("자동차 이름은 5자를 초과할 수 없습니다.");
         }
@@ -23,7 +23,7 @@ public class CarName {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CarName carName = (CarName) o;
+        Name carName = (Name) o;
         return Objects.equals(name, carName.name);
     }
 

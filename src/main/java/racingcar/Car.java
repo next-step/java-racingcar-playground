@@ -3,11 +3,11 @@ package racingcar;
 import java.util.Objects;
 
 public class Car {
-    private final CarName name;
+    private final Name name;
     private int position;
 
     public Car(String name, int position) {
-        this.name = new CarName(name);
+        this.name = new Name(name);
         this.position = position;
     }
 
