@@ -1,20 +1,15 @@
 package racingcar;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class RacingGame {
-    private List<Car> cars;
+    private Cars cars;
+    private int gameCount;
 
-    public RacingGame(String input) {
-        String[] carNames = input.split(",");
-        this.cars = Arrays.stream(carNames)
-                .map(name -> new Car(name))
-                .collect(Collectors.toList());
+    public RacingGame(String input, int gameCount) {
+        this.cars = new Cars(input);
+        this.gameCount = gameCount;
     }
 
-    public List<Car> getCars() {
+    public Cars getCars() {
         return cars;
     }
 }
