@@ -27,4 +27,12 @@ public class CarTest {
         Car car = new Car("aaron", 4);
         assertThat(car.toString()).isEqualTo("aaron : ----");
     }
+
+    @Test
+    @DisplayName("자동차는 0에서 9 사이 Random 값이 4이상일 경우 전진")
+    void car_can_forward_if_0_to_9() {
+        Car car = new Car("aaron");
+        car.forward(5);
+        assertThat(car).isEqualTo(new Car("aaron", 1));
+    }
 }

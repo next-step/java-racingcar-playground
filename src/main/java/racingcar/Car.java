@@ -3,6 +3,8 @@ package racingcar;
 import java.util.Objects;
 
 public class Car {
+    private static final int FORWARD_NUM = 4;
+
     private final Name name;
     private Position position;
 
@@ -31,5 +33,11 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public void forward(int randomNo) {
+        if (randomNo >= FORWARD_NUM) {
+            position.move();
+        }
     }
 }
