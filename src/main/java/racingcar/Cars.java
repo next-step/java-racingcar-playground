@@ -1,18 +1,17 @@
 package racingcar;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Cars {
     private List<Car> cars;
 
-    public Cars(String input) {
-        String[] carNames = input.split(",");
-        this.cars = Arrays.stream(carNames)
-                .map(name -> new Car(name))
-                .collect(Collectors.toList());
+    public Cars(List<Car> cars) {
+        this.cars = cars;
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 
     @Override
