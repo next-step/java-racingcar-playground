@@ -9,6 +9,10 @@ public class Position {
         this.position = position;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
     @Override
     public String toString() {
         String result = "";

@@ -17,15 +17,23 @@ public class Car {
         this(name, 0);
     }
 
-    @Override
-    public String toString() {
-        return name.toString() + " : " + position.toString();
+    public int getPosition() {
+        return position.getPosition();
     }
 
     public void forward(int randomNo) {
         if (randomNo >= FORWARD_NUM) {
             position.move();
         }
+    }
+
+    public boolean isLargeThanMaxPosition(int maxPosition) {
+        return getPosition() > maxPosition;
+    }
+
+    @Override
+    public String toString() {
+        return name.toString() + " : " + position.toString();
     }
 
     @Override

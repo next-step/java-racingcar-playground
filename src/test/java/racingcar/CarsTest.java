@@ -4,6 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarsTest {
 
@@ -14,6 +17,8 @@ public class CarsTest {
         Car aaron = new Car("aaron", 5);
         Car honux = new Car("honux", 3);
         Cars cars = new Cars(Arrays.asList(pobi, aaron, honux));
+        List<Car> winners = cars.findWinner();
 
+        assertThat(winners).containsExactly(new Car("pobi", 5), new Car("aaron", 5));
     }
 }
