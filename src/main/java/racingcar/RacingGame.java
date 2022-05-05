@@ -28,6 +28,6 @@ public class RacingGame {
             resultView.printState(cars);
         }
 
-        resultView.end(cars.findWinner());
+        resultView.end(cars.findWinners());
     }
 }

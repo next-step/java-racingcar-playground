@@ -21,18 +21,22 @@ public class Car {
         return name;
     }
 
-    public int getPosition() {
-        return position.getPosition();
-    }
-
     public void forward(int randomNo) {
         if (randomNo >= FORWARD_NUM) {
             position.move();
         }
     }
 
-    public boolean isLargeThanMaxPosition(int maxPosition) {
-        return getPosition() > maxPosition;
+    public Position getMaxPosition(Position maxPosition) {
+        if (position.lessThan(maxPosition)) {
+            return maxPosition;
+        }
+
+        return position;
+    }
+
+    public boolean isWinner(Position maxPosition) {
+        return position.equals(maxPosition);
     }
 
     @Override

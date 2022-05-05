@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Position {
     private int position;
 
-    public Position(int position) {
-        this.position = position;
+    public Position() {
+
     }
 
-    public int getPosition() {
-        return position;
+    public Position(int position) {
+        this.position = position;
     }
 
     @Override
@@ -38,5 +38,9 @@ public class Position {
 
     public void move() {
         this.position++;
+    }
+
+    public boolean lessThan(Position maxPosition) {
+        return position < maxPosition.position;
     }
 }

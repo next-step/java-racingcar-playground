@@ -26,11 +26,11 @@ public class Cars {
         return new Random().nextInt(10);
     }
 
-    public List<Car> findWinner() {
-        int maxPosition = findMaxPosition();
+    public List<Car> findWinners() {
+        Position maxPosition = findMaxPosition();
         List<Car> winner = new ArrayList<>();
         for (Car car : cars) {
-            if (car.getPosition() == maxPosition) {
+            if (car.isWinner(maxPosition)) {
                 winner.add(car);
             }
         }
@@ -38,14 +38,13 @@ public class Cars {
         return winner;
     }
 
-    private int findMaxPosition() {
-        int maxPosition = 0;
+    private Position findMaxPosition() {
+        Position position = new Position();
         for (Car car : cars) {
-            if (car.isLargeThanMaxPosition(maxPosition)) {
-                maxPosition = car.getPosition();
-            }
+            position = car.getMaxPosition(position);
         }
-        return maxPosition;
+
+        return position;
     }
 
     @Override

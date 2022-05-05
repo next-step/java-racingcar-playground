@@ -17,7 +17,7 @@ public class CarsTest {
         Car aaron = new Car("aaron", 5);
         Car honux = new Car("honux", 3);
         Cars cars = new Cars(Arrays.asList(pobi, aaron, honux));
-        List<Car> winners = cars.findWinner();
+        List<Car> winners = cars.findWinners();
 
         assertThat(winners).containsExactly(new Car("pobi", 5), new Car("aaron", 5));
     }
