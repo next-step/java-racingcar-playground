@@ -6,21 +6,22 @@ public class Position {
     private int position;
 
     public Position() {
-
+        this(0);
     }
 
     public Position(int position) {
+        if (position < 0) {
+            throw new IllegalArgumentException("position은 음수 값을 가질 수 없습니다.");
+        }
         this.position = position;
     }
 
-    @Override
-    public String toString() {
-        String result = "-";
-        for (int i = 0; i < position; i++) {
-            result += "-";
-        }
+    public void move() {
+        this.position++;
+    }
 
-        return result;
+    public boolean lessThan(Position maxPosition) {
+        return position < maxPosition.position;
     }
 
     @Override
@@ -36,11 +37,13 @@ public class Position {
         return Objects.hash(position);
     }
 
-    public void move() {
-        this.position++;
-    }
+    @Override
+    public String toString() {
+        String result = "-";
+        for (int i = 0; i < position; i++) {
+            result += "-";
+        }
 
-    public boolean lessThan(Position maxPosition) {
-        return position < maxPosition.position;
+        return result;
     }
 }

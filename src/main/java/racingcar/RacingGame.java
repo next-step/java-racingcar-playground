@@ -17,10 +17,6 @@ public class RacingGame {
         this.gameCount = gameCount;
     }
 
-    public List<Car> getCars() {
-        return cars.getCars();
-    }
-
     public void start(ResultView resultView) {
         resultView.start();
         for (int i = 0; i < gameCount; i++) {
@@ -29,5 +25,9 @@ public class RacingGame {
         }
 
         resultView.end(cars.findWinners());
+    }
+
+    public List<Car> getCars() {
+        return cars.getCars();
     }
 }
