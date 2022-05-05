@@ -17,6 +17,10 @@ public class Car {
         this(name, 0);
     }
 
+    public Name getName() {
+        return name;
+    }
+
     public int getPosition() {
         return position.getPosition();
     }

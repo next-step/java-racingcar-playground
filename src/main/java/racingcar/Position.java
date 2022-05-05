@@ -15,7 +15,7 @@ public class Position {
 
     @Override
     public String toString() {
-        String result = "";
+        String result = "-";
         for (int i = 0; i < position; i++) {
             result += "-";
         }

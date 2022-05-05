@@ -25,7 +25,7 @@ public class CarTest {
     @DisplayName("자동차는 자신의 상태를 출력")
     void car_can_pring_state() {
         Car car = new Car("aaron", 4);
-        assertThat(car.toString()).isEqualTo("aaron : ----");
+        assertThat(car.toString()).isEqualTo("aaron : -----");
     }
 
     @Test

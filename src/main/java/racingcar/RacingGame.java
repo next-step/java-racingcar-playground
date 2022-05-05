@@ -20,4 +20,14 @@ public class RacingGame {
     public List<Car> getCars() {
         return cars.getCars();
     }
+
+    public void start(ResultView resultView) {
+        resultView.start();
+        for (int i = 0; i < gameCount; i++) {
+            cars.start();
+            resultView.printState(cars);
+        }
+
+        resultView.end(cars.findWinner());
+    }
 }
