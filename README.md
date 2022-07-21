@@ -1,26 +1,30 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
+# ️ 2️⃣ 자동차 경주 게임 구현
 
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
+## 구현목록
 
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
+- 입력
+- [ ] 자동차 이름을 , 구분자로 구분하여 입력한다.
+    - [ ] [예외] 자동차 이름은 1글자 이상, 5글자 이하여야한다
+    - [ ] [예외] 자동차의 이름은 중복 될 수 없다.
+- [ ] 게임 진행 횟수를 입력 받는다.
+    - [ ] [예외] 진행 횟수는 1보다 작을 수 없다.
 
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
+- 게임 진행
+- [ ] 진행 횟수만큼 게임이 진행된다.
+    - [ ] 랜덤값(0~9)을 생성하여 4이상일때 전진한다.
 
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
 
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
+- 출력
+- [ ] 게임이 한판 진행될때 마다 자동차 이름과 위치를 표시한다.
+- [ ] 게임이 종료 되었다면 우승자를 출력한다.
+    - [ ] 2명 이상일시 , 구분자를 이용하여 모두 출력한다.
 
-```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
+## 커밋 메시지
 
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+- FEAT : 새로운 기능의 추가
+- FIX: 버그 수정
+- DOCS: 문서 수정
+- STYLE: 스타일 관련 기능(코드 포맷팅, 세미콜론 누락, 코드 자체의 변경이 없는 경우)
+- REFACTOR: 코드 리펙토링
+- TEST: 테스트 코트, 리펙토링 테스트 코드 추가
+- CHORE: 빌드 업무 수정, 패키지 매니저 수정(ex .gitignore 수정 같은 경우)
