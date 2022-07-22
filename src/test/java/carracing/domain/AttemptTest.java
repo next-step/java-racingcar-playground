@@ -17,4 +17,11 @@ class AttemptTest {
     void 진행횟수생성시_예외발생(){
         assertThatThrownBy(() -> new Attempt(-1)).isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void 시도횟수_감소(){
+        Attempt attempt = new Attempt(3);
+        attempt=attempt.decrease();
+        assertThat(attempt.toInt()).isEqualTo(2);
+    }
 }
