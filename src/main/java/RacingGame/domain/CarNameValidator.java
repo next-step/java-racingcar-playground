@@ -1,4 +1,4 @@
-package domain;
+package RacingGame.domain;
 
 import javax.swing.*;
 import java.util.List;

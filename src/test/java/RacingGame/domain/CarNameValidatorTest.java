@@ -1,7 +1,6 @@
 package RacingGame.domain;
 
 
-import domain.CarNameValidator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
