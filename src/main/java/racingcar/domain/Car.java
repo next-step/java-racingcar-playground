@@ -1,4 +1,4 @@
-package RacingGame.domain;
+package racingcar.domain;
 
 public class Car implements Comparable<Car>{
     private static final int MOVE_LIMIT =4;

@@ -1,4 +1,4 @@
-package RacingGame.domain;
+package racingcar.domain;
 
 public class CarStatusDTO {
     private final String carName;

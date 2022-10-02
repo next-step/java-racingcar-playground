@@ -1,6 +1,5 @@
-package RacingGame.domain;
+package racingcar.domain;
 
-import javax.swing.*;
 import java.util.List;
 
 public class CarNameValidator {

@@ -1,7 +1,8 @@
-package RacingGame.domain;
+package racingcar;
 
 
 import org.junit.jupiter.api.Test;
+import racingcar.domain.CarNameValidator;
 
 import java.util.Arrays;
 
