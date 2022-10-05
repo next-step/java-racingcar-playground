@@ -29,10 +29,10 @@ public class InputView {
 
     public static int getTrialCount() throws RuntimeException{
         System.out.println(INPUT_TRIAL_MESSAGE);
-        return validateCountAndTransfetToInt(scanner.nextLine());
+        return validateCountAndTransferToInt(scanner.nextLine());
     }
 
-    private static int validateCountAndTransfetToInt(String input) {
+    private static int validateCountAndTransferToInt(String input) {
         InputValidator.checkTrialCount(input);
         return Integer.parseInt(input);
     }

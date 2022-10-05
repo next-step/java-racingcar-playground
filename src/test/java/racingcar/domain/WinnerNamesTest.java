@@ -18,4 +18,6 @@ public class WinnerNamesTest {
         assertThat(winners.size()).isEqualTo(2);
         assertThat(winners).contains("이브", "클레이");
     }
+
+
 }
