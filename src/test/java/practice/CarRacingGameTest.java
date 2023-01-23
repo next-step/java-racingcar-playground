@@ -21,6 +21,7 @@ public class CarRacingGameTest {
 
     @Test
     void _4이상만_전진_조건(){
+
         int a= 4;
         int b= 2;
         assertThat(CarRacingGame.ableToAdvance(a)).isTrue();

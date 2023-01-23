@@ -6,10 +6,10 @@ public class Car {
 
     public Car(String name, int progress) {
         this.name= new Name(name);
-        this.progress =new Progress();
+        this.progress =new Progress(progress);
     }
 
-    public void logProgress(Car car){
+    public void logProgress(){
         System.out.print(this.name);
         for(int i=0;i<this.progress.getProgress();i++)
             System.out.print("-");

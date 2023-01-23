@@ -1,5 +1,7 @@
 package practice;
 
+import java.util.HashMap;
+
 public class Car {
     private String name;
     private int progress;
