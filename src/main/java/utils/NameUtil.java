@@ -7,10 +7,8 @@ public class NameUtil {
     private static final int NAME_MAX_LENGTH = 5;
     private static final Pattern SPLIT_PATTERN = Pattern.compile("^,.*|.*,$");
 
-    public static String validation(String text) {
-        if (text == null || text.trim().isEmpty()) {
-            throw new IllegalArgumentException("잘못된 이름입니다. 다시 입력해주세요.");
-        }
+    public static String validation(final String text) {
+        checkNullAndEmpty(text, "잘못된 이름입니다. 다시 입력해주세요.");
 
         final String name = text.trim();
 
@@ -21,10 +19,8 @@ public class NameUtil {
         return name;
     }
 
-    public static String[] split(String text) {
-        if (text == null || text.trim().isEmpty()) {
-            throw new IllegalArgumentException("잘못된 입력입니다. 다시 입력해주세요.");
-        }
+    public static String[] split(final String text) {
+        checkNullAndEmpty(text, "잘못된 입력입니다. 다시 입력해주세요.");
 
         final String input = text.trim();
 
@@ -33,5 +29,11 @@ public class NameUtil {
         }
 
         return input.split(",");
+    }
+
+    private static void checkNullAndEmpty(final String text, final String errMsg) {
+        if (text == null || text.trim().isEmpty()) {
+            throw new IllegalArgumentException(errMsg);
+        }
     }
 }
