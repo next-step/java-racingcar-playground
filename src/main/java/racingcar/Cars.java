@@ -34,7 +34,7 @@ public class Cars {
         return cars.get(idx);
     }
 
-    public List<Car> getWinningCarNames() {
+    public List<Car> getWinningCars() {
         final int max = getMaxMove();
 
         return cars.stream()

@@ -54,6 +54,6 @@ public class CarsTest {
         cars.getCar(0).move();
         cars.getCar(2).move();
 
-        assertThat(cars.getWinningCarNames()).extracting("name").containsExactly("pobi", "honux");
+        assertThat(cars.getWinningCars()).extracting("name").containsExactly("pobi", "honux");
     }
 }
