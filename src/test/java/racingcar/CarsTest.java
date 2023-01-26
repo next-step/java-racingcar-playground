@@ -32,7 +32,7 @@ public class CarsTest {
         cars.add("name");
         cars.checkNumberAndMove(0, 3);
 
-        assertThat(cars.getCar(0).getPosition()).isEqualTo(0);
+        assertThat(cars.getCar(0).getPosition()).isEqualTo(1);
     }
 
     @Test
@@ -41,6 +41,6 @@ public class CarsTest {
         cars.add("name");
         cars.checkNumberAndMove(0, 4);
 
-        assertThat(cars.getCar(0).getPosition()).isEqualTo(1);
+        assertThat(cars.getCar(0).getPosition()).isEqualTo(2);
     }
 }

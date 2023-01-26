@@ -19,13 +19,13 @@ public class CarTest {
     @DisplayName("Car 객체 생성")
     void createCar() {
         assertThat(car.getName()).isEqualTo("name");
-        assertThat(car.getPosition()).isEqualTo(0);
+        assertThat(car.getPosition()).isEqualTo(1);
     }
 
     @Test
     @DisplayName("자동차 전진")
     void moveCar() {
         car.move();
-        assertThat(car.getPosition()).isEqualTo(1);
+        assertThat(car.getPosition()).isEqualTo(2);
     }
 }

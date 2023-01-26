@@ -7,7 +7,7 @@ public class Car {
 
     public Car(final String name) {
         this.name = name;
-        position = 0;
+        position = 1;
     }
 
     public String getName() {
