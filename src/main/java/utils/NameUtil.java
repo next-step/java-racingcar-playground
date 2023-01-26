@@ -2,30 +2,32 @@ package utils;
 
 import java.util.regex.Pattern;
 
+import static utils.constants.ErrorConstant.*;
+
 public class NameUtil {
 
-    private static final int NAME_MAX_LENGTH = 5;
+    public static final int NAME_MAX_LENGTH = 5;
     private static final Pattern SPLIT_PATTERN = Pattern.compile("^,.*|.*,$");
 
     public static String validation(final String text) {
-        checkNullAndEmpty(text, "잘못된 이름입니다. 다시 입력해주세요.");
+        checkNullAndEmpty(text, INVALID_CAR_NAME);
 
         final String name = text.trim();
 
         if (name.length() > NAME_MAX_LENGTH) {
-            throw new IllegalArgumentException("자동차 이름은 " + NAME_MAX_LENGTH + "글자를 초과할 수 없습니다. 다시 입력해주세요.");
+            throw new IllegalArgumentException(CAR_NAME_MORE_THEN_MAX_LENGTH);
         }
 
         return name;
     }
 
     public static String[] split(final String text) {
-        checkNullAndEmpty(text, "잘못된 입력입니다. 다시 입력해주세요.");
+        checkNullAndEmpty(text, INVALID_INPUT);
 
         final String input = text.trim();
 
         if (SPLIT_PATTERN.matcher(input).matches()) {
-            throw new IllegalArgumentException("자동차 이름은 쉼표(,)를 기준으로 구분합니다. 다시 입력해주세요.");
+            throw new IllegalArgumentException(INVALID_COMMA_LOCATION);
         }
 
         return input.split(",");
