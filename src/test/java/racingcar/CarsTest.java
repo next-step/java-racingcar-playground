@@ -43,4 +43,17 @@ public class CarsTest {
 
         assertThat(cars.getCar(0).getPosition()).isEqualTo(2);
     }
+
+    @Test
+    @DisplayName("우승 자동차 선정")
+    void winningCars() {
+        cars.add("pobi");
+        cars.add("crong");
+        cars.add("honux");
+
+        cars.getCar(0).move();
+        cars.getCar(2).move();
+
+        assertThat(cars.getWinningCarNames()).extracting("name").containsExactly("pobi", "honux");
+    }
 }

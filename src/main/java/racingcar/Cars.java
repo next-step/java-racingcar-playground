@@ -2,6 +2,7 @@ package racingcar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cars {
 
@@ -31,5 +32,22 @@ public class Cars {
 
     public Car getCar(int idx) {
         return cars.get(idx);
+    }
+
+    public List<Car> getWinningCarNames() {
+        final int max = getMaxMove();
+
+        return cars.stream()
+                .filter(car -> car.getPosition() == max)
+                .collect(Collectors.toList());
+    }
+
+    private int getMaxMove() {
+        int max = 0;
+        for (Car car : cars) {
+            max = Math.max(max, car.getPosition());
+        }
+
+        return max;
     }
 }
