@@ -25,13 +25,11 @@ public class CarTest {
     }
 
     @Test
-    void car_move_4미만() {
+    void car_move_0미만() {
         Car car = new Car(5);
-        assertThatThrownBy(() -> car.move(3))
+        assertThatThrownBy(() -> car.move(-1))
                 .isInstanceOf(java.lang.IllegalArgumentException.class)
-                .hasMessageContaining("자동차는 최대 4이상 9이하 만큼만 움직일 수 있습니다.");
+                .hasMessageContaining("0이상 9이하에 해당하는 랜덤값이 주어져야 합니다");
     }
-
-
 }
 
