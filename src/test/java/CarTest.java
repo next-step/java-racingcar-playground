@@ -2,6 +2,7 @@ import car.Car;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class CarTest {
 
@@ -13,5 +14,11 @@ public class CarTest {
 
         car.go(3);
         assertThat(car.getDistance()).isEqualTo(1);
+    }
+
+    @Test
+    void checkCarNameLength(){
+
+        assertThatThrownBy(() ->new Car("werwerwer")).isInstanceOf(IllegalArgumentException.class);
     }
 }
