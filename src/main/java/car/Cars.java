@@ -1,16 +1,14 @@
 package car;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Cars {
-    private final List<Car> carList;
+    private final List<Car> carList = new ArrayList<>();
     public Cars(String names) {
-        carList = Arrays.stream(names.split(","))
-                .map(name -> new Car(name))
-                .collect(Collectors.toList());
+        for(String name : names.split(",")){
+            carList.add(new Car(name));
+        }
     }
 
     public void play(int count){
@@ -20,8 +18,8 @@ public class Cars {
     }
 
     public void move(){
-        for (int i = 0; i < carList.size(); i++) {
-            carList.get(i).go(3);
+        for(Car car : carList){
+            car.go(5);
         }
     }
 }
