@@ -15,12 +15,13 @@ public class Car {
     }
 
     public void go(int number) {
-        if( number >= 4 ){
-            distance++;
+        if( number < 4 ){
+            return;
         }
+        distance++;
     }
 
-    public int getDistance() {
-        return this.distance;
+    public int compareDistance(Car car) {
+        return Integer.compare(this.distance, car.distance);
     }
 }
