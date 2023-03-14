@@ -28,4 +28,12 @@ public class Car {
     public String getName() {
         return name;
     }
+
+    public void printCarMove(){
+        System.out.print(name + " : ");
+        for (int i = 0; i < distance; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
 }
