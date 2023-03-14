@@ -39,4 +39,10 @@ public class CarTest {
         assertThatThrownBy(() ->new Car("werwerwer"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void carName(){
+        Car car = new Car("test");
+        assertThat(car.getName()).isEqualTo("test");
+    }
 }

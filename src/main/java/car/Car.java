@@ -24,4 +24,8 @@ public class Car {
     public int compareDistance(Car car) {
         return Integer.compare(this.distance, car.distance);
     }
+
+    public String getName() {
+        return name;
+    }
 }
