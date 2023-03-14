@@ -8,4 +8,12 @@ public class CarsTest {
         Cars cars = new Cars("kia,volvo,pobi");
         cars.play(5);
     }
+
+    @Test
+    void winner(){
+        Cars cars = new Cars("kia,volvo,pobi");
+        cars.play(5);
+
+
+    }
 }

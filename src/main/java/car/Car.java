@@ -21,8 +21,15 @@ public class Car {
         distance++;
     }
 
-    public int compareDistance(Car car) {
-        return Integer.compare(this.distance, car.distance);
+    public Car compareDistance(Car car) {
+        if( this.distance >= car.distance  ){
+            return this;
+        }
+        return car;
+    }
+
+    public boolean matchDistance(Car car){
+        return this.distance == car.distance;
     }
 
     public String getName() {
