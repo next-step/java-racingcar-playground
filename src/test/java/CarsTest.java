@@ -12,8 +12,6 @@ public class CarsTest {
     @Test
     void winner(){
         Cars cars = new Cars("kia,volvo,pobi");
-        cars.play(5);
-
-
+        cars.play(3);
     }
 }

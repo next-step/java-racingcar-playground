@@ -1,6 +1,7 @@
 package car;
 
 public class Car {
+
     private final String name;
     private int distance = 0;
     public Car(String name) {
@@ -15,32 +16,21 @@ public class Car {
     }
 
     public void go(int number) {
-        if( number < 4 ){
-            return;
+        if( number >= 4 ){
+            distance++;
         }
-        distance++;
     }
-
-    public Car compareDistance(Car car) {
-        if( this.distance >= car.distance  ){
-            return this;
-        }
-        return car;
-    }
-
-    public boolean matchDistance(Car car){
-        return this.distance == car.distance;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void printCarMove(){
-        System.out.print(name + " : ");
+    public int getDistance() { return this.distance; }
+
+    public String moveView(){
+        String result = this.name + " : ";
         for (int i = 0; i < distance; i++) {
-            System.out.print("-");
+            result += "-";
         }
-        System.out.println();
+        return result;
     }
 }
