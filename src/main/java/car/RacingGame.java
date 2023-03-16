@@ -21,9 +21,9 @@ public class RacingGame {
         carList.add(oh);
     }
 
-    public boolean containCar(String carName) {
+    public boolean containCar(CarName carName) {
         return carList.stream()
-                .map(car -> car.getName())
+                .map(Car::getName)
                 .anyMatch(name -> name.equals(carName));
     }
 

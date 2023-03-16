@@ -2,17 +2,10 @@ package car;
 
 public class Car {
 
-    private final String name;
+    private final CarName name;
     private int distance = 0;
     public Car(String name) {
-        checkCarNameLength(name);
-        this.name = name;
-    }
-
-    private void checkCarNameLength(String carName){
-        if( carName.length() > 5 ){
-            throw new IllegalArgumentException("car name too long");
-        }
+        this.name = new CarName(name);
     }
 
     public void go(int number) {
@@ -20,17 +13,17 @@ public class Car {
             distance++;
         }
     }
-    public String getName() {
+    public CarName getName() {
         return name;
     }
 
     public int getDistance() { return this.distance; }
 
     public String moveView(){
-        String result = this.name + " : ";
+        StringBuilder result = new StringBuilder(this.name + " : ");
         for (int i = 0; i < distance; i++) {
-            result += "-";
+            result.append("-");
         }
-        return result;
+        return result.toString();
     }
 }

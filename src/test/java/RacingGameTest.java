@@ -19,9 +19,9 @@ public class RacingGameTest {
     void joinRacingCar(){
         RacingGame game = new RacingGame(3);
         game.join(new Car("oh"));
-        assertThat(game.containCar("oh")).isTrue();
+        assertThat(game.containCar(new Car("oh").getName())).isTrue();
 
-        assertThat(game.containCar("ha")).isFalse();
+        assertThat(game.containCar(new Car("ha").getName())).isFalse();
     }
 
     @Test
