@@ -1,11 +1,13 @@
 package view.input;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
+    private static final Scanner scanner = new Scanner(System.in);
+    public static int inputTrial(){
+        return scanner.nextInt();
+    }
+
     public static String[] inputNames(){
         String name = getName();
 
@@ -13,7 +15,6 @@ public class InputView {
     }
 
     private static String getName() {
-        Scanner scanner = new Scanner(System.in);
         String name = scanner.next();
         return name;
     }
