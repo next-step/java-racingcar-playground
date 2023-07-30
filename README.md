@@ -1,6 +1,6 @@
 1.[v] 사용자에게 차이름 문자열 입력받기 #InputView.requestCarNames()
 2.[v] 사용자에게 시행횟수 입력받기 #InputView.requestGameCount()
-3.[] 입력받은 차이름 문자열 (,) 단위로 분해하기 #Parser.splitInputCars()
+3.[v] 입력받은 차이름 문자열 (,) 단위로 분해하기 #Parser.splitInputNames()
 4.[] 분해된 차 이름 5글자 초과하는지 유효성검사하기 #Name.validateCarNameLength()
 5.[] 분해된 차 이름 갯수만큼 car 생성, 위치값 이름 초기화 #GameService.joinCar()
 6.[] 각각의 car 객체를 cars 객체의 ArrayList에 담기 #Cars.addCar()
