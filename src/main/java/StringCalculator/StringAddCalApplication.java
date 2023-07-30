@@ -1,4 +1,4 @@
-package StringCalculatorTest;
+package StringCalculator;
 
 import java.util.Scanner;
 
@@ -10,7 +10,6 @@ public class StringAddCalApplication {
             int answer = StringAddCalculator.splitAndSum(input);
             System.out.println(answer);
         } catch (RuntimeException e) {
-            System.out.println("값을 잘못 입력하셨습니다.");
             e.printStackTrace();
         }
     }
