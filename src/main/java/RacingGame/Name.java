@@ -1,15 +1,19 @@
 package RacingGame;
 
 public class Name {
-    private String carName;
+    private String name;
     public Name(String carName) {
-        this.carName = carName;
+        this.name = carName;
     }
 
     public boolean isCarNameLengthOverFive(String inputCarName) {
-        if (carName.length() > 5) {
+        if (name.length() > 5) {
             return true;
         }
         return false;
+    }
+
+    public void setName (String splitedCarName) {
+        name = splitedCarName;
     }
 }
