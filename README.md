@@ -2,7 +2,12 @@
 2. [v] 사용자에게 시행 횟수 입력받기 #InputView.requestGameCount()
 3. [v] 입력받은 차 이름 문자열 (,) 단위로 분해하기 #Parser.splitInputNames()
 4. [v] 분해된 차 이름 5글자 초과하는지 유효성 검사하기 #Name.validateCarNameLength()
-5. [] 분해된 차 이름 갯수만큼 car 생성, 위치값 이름 초기화 #GameService.joinCar()
+5. [v] 분해된 차 이름 갯수만큼 car 생성, 위치값 이름 초기화 Cars 반환 #GameService.joinCar()
+    - [v]car 객체의 멤버변수 Name 입력 #Car.setCarName()
+    - [v]car 객체의 멤버변수 Position 입력 #Car.setCarPosition
+    - [v]Position 객체의 멤버변수 int position 입력 #Position.setPosition()
+    - [v]Name 객체의 멤버변수 String name 입력 #Name.setName()
+    - [] Cars 객체생성 car 객체 담고 반환
 6. [] 각각의 car 객체를 cars 객체의 ArrayList에 담기 #Cars.addCar()
 7. [] 랜덤한 1~9 숫자 하나 뽑기 #RandomNumber.generateNumber()
 8. [] 뽑은 숫자가 4 이상이면 car 전진 #Car.go()
