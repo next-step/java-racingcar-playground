@@ -8,6 +8,6 @@ public class Car {
         carName = new Name(splitedName);
         carPosition = new Position(0);
     }
-    public Name getCarName() {return carName;}
-    public Position getCarPosition() {return carPosition;}
+    public String getCarName() {return carName.getName();}
+    public int getCarPosition() {return carPosition.getPosition();}
 }
