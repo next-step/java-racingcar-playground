@@ -4,11 +4,10 @@ public class Car {
     private Name carName;
     private Position carPosition;
 
-    public void setCarName(String splitedName) {
-        carName.setName(splitedName);
+    public Car (String splitedName , int position) {
+        carName = new Name(splitedName);
+        carPosition = new Position(0);
     }
-
-    public  void SetCarPosition(int position) {
-        carPosition.setPosition(position);
-    }
+    public Name getCarName() {return carName;}
+    public Position getCarPosition() {return carPosition;}
 }
