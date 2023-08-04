@@ -16,4 +16,8 @@ public class Name {
     public void setName (String splitedCarName) {
         name = splitedCarName;
     }
+
+    public String getName() {
+        return name;
+    }
 }
