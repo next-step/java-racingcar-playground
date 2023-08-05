@@ -5,7 +5,7 @@ public class GameService {
     public Cars joinCar (String [] splitedCarNames) {
         Cars cars = Cars.getInstance();
         for(int index=0; index<splitedCarNames.length; index++) {
-            Car car = new Car(splitedCarNames[index], 0);
+            Car car = new Car(splitedCarNames[index]);
             cars.setJoinedCar(car);
         }
         return cars;
