@@ -23,7 +23,7 @@ public class ResultView {
         printRoundResult(cars);
         ArrayList<Car> carsList = cars.getJoinedCar();
         ArrayList<Car> winners = new ArrayList<>();
-        int highPosition = carsList.get(0).getCarPosition();
+        int highPosition = -1;
 
         for (Car car : carsList) {
             int position = car.getCarPosition();
@@ -31,6 +31,7 @@ public class ResultView {
                 highPosition = position;
                 winners.clear();
                 winners.add(car);
+                continue;
             }
             if(position == highPosition) {
                 winners.add(car);
@@ -47,6 +48,7 @@ public class ResultView {
         for (int i=0; i<winners.size(); i++) {
             if(i == winners.size()-1) {
                 winnersName.append(winners.get(i).getCarName());
+                continue;
             }
             winnersName.append(winners.get(i).getCarName()+",");
         }

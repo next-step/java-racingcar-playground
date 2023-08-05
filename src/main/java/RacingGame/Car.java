@@ -17,4 +17,5 @@ public class Car {
         }
         carPosition.setPosition(carPosition.getPosition()+1);
     }
+
 }
