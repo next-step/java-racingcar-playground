@@ -4,7 +4,7 @@ public class Car {
     private Name carName;
     private Position carPosition;
 
-    public Car (String splitedName) {
+    public Car (String splitedName)  {
         carName = new Name(splitedName);
         carPosition = new Position(0);
     }
