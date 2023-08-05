@@ -10,7 +10,7 @@
 6. [v] 각각의 car 객체를 cars 객체의 ArrayList에 담기 #Cars.addCar()
 7. [v] 랜덤한 1~9 숫자 하나 뽑기 #RandomNumber.generateNumber()
 8. [v] Car 전진 #Car.go()
-9. [] 입력받은 시행 횟수만큼 반복하기 #GameService.play()
-    - [] 멤버변수 Count 클래스 만들기
-13. [] 시행 결과 사용자에게 표시하기 #ResultView.printResult()
-14. [] 최종 게임 결과를 발표한다. #ResultView.printWinner()
+9. [v] 입력받은 시행 횟수만큼 반복하기 #GameService.playRound()
+    - [v] 멤버변수 Count 클래스 만들기
+10. [v] 시행 결과 사용자에게 표시하기 #ResultView.printRoundResult()
+11. [v] 최종 게임 결과를 발표한다. #ResultView.printWinner()
