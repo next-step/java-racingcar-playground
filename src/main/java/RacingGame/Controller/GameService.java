@@ -1,4 +1,8 @@
-package RacingGame;
+package RacingGame.Controller;
+
+import RacingGame.DTO.Cars;
+import RacingGame.domain.Car;
+import RacingGame.view.ResultView;
 
 import java.util.Random;
 import java.util.Scanner;

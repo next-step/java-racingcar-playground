@@ -1,4 +1,4 @@
-package RacingGame;
+package RacingGame.util;
 
 public class Parser {
 

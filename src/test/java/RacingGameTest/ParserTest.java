@@ -1,6 +1,6 @@
 package RacingGameTest;
 
-import RacingGame.Parser;
+import RacingGame.util.Parser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
 package RacingGameTest;
 
-import RacingGame.Name;
+import RacingGame.domain.Name;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,7 @@
 package RacingGameTest;
 
-import RacingGame.Cars;
-import RacingGame.GameService;
+import RacingGame.DTO.Cars;
+import RacingGame.Controller.GameService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
