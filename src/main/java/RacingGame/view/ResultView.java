@@ -28,6 +28,12 @@ public class ResultView {
         ArrayList<Car> winners = new ArrayList<>();
         int highPosition = -1;
 
+        findWinner(carsList, winners, highPosition);
+        System.out.println(winnersName(winners)+"가 최종우승했습니다");
+
+    }
+
+    private static void findWinner(ArrayList<Car> carsList, ArrayList<Car> winners, int highPosition) {
         for (Car car : carsList) {
             int position = car.getCarPosition();
             if(position > highPosition) {
@@ -40,9 +46,8 @@ public class ResultView {
                 winners.add(car);
             }
         }
-        System.out.println(winnersName(winners)+"가 최종우승했습니다");
-
     }
+
     private String winnersName(ArrayList<Car> winners) {
         if(winners.size() == 1) {
             return winners.get(0).getCarName();
