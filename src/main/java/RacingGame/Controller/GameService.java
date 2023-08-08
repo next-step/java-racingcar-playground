@@ -2,6 +2,7 @@ package RacingGame.Controller;
 
 import RacingGame.DTO.Cars;
 import RacingGame.domain.Car;
+import RacingGame.view.InputView;
 import RacingGame.view.ResultView;
 
 import java.util.Random;
@@ -21,8 +22,8 @@ public class GameService {
     }
 
     public void inputRounds() {
-        System.out.println("시도할 회수는 몇회인가요?");
-        int rounds = new Scanner(System.in).nextInt();
+        InputView inputView = new InputView();
+        int rounds = inputView.requestGameCount();
         this.rounds = rounds;
     }
     public void playRound(Cars cars) {
