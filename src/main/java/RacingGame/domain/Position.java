@@ -13,4 +13,8 @@ public class Position {
     public int getPosition() {
         return position;
     }
+
+    public Position moveForward() {
+        return new Position(this.position+1);
+    }
 }

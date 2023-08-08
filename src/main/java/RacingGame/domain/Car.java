@@ -12,10 +12,10 @@ public class Car {
     public int getCarPosition() {return carPosition.getPosition();}
 
     public void go(int randomNumber) {
-        if(randomNumber < 4) {
-            return;
+        if(randomNumber >= 4) {
+            Position newPosition = carPosition.moveForward();
+            this.carPosition = newPosition;
         }
-        carPosition.setPosition(carPosition.getPosition()+1);
     }
 
 }
