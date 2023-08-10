@@ -2,7 +2,6 @@ package RacingGame.Controller;
 
 import RacingGame.DTO.Cars;
 import RacingGame.domain.Car;
-import RacingGame.util.Parser;
 import RacingGame.view.InputView;
 import RacingGame.view.ResultView;
 
@@ -12,12 +11,6 @@ import java.util.Scanner;
 public class GameService {
 
     private int rounds;
-    InputView inputView = new InputView();
-    Parser parser = new Parser();
-
-    public String [] splitInputString() {
-        return parser.splitInputNames(inputView.requestCarName());
-    }
 
     public Cars joinCar (String [] splitedCarNames) {
         Cars cars = Cars.getInstance();
