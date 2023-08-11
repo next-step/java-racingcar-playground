@@ -17,7 +17,7 @@ public class GameService {
         Cars cars = Cars.getInstance();
         for(int index=0; index<splitedCarNames.length; index++) {
             Car car = new Car(splitedCarNames[index]);
-            cars.setJoinedCar(car);
+            cars.joinCar(car);
         }
         return cars;
     }

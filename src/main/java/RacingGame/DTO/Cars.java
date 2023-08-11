@@ -18,7 +18,7 @@ public class Cars {
         return joinedCar;
     }
 
-    public void setJoinedCar(Car car) {
+    public void joinCar(Car car) {
         joinedCar.add(car);
     }
 }
