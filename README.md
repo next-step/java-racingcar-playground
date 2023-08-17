@@ -37,7 +37,7 @@ classDiagram
         -int drives
 
         +Car(String name)
-        +play() : PlayResult
+        +driveOrNot() : DriveResult
     }
 
     RacingGame ..> GameResult
@@ -54,20 +54,20 @@ classDiagram
     Cars ..> RoundResult
 
     class RoundResult {
-        -List≺PlayResult≻ plays;
+        -List≺DriveResult≻ plays;
 
-        +RoundResult(List≺PlayResult≻ plays)
+        +RoundResult(List≺DriveResult≻ plays)
         +toString()
     }
 
-    RoundResult ..> PlayResult
-    Car ..> PlayResult
+    RoundResult ..> DriveResult
+    Car ..> DriveResult
 
-    class PlayResult {
+    class DriveResult {
         -String carName
         -int drives
         
-        +PlayResult(String carName, String drives)
+        +DriveResult(String carName, String drives)
         +toString()
     }
 
@@ -89,7 +89,7 @@ classDiagram
 
 ## 기능 요구사항
 
-- [ ] 60% 확률로 Car를 전진시키고 결과를 반환한다
+- [x] 60% 확률로 Car를 전진시키고 결과를 반환한다
 - [ ] Cars의 모든 Car를 전진시켜 한 라운드를 진행하고 결과를 반환한다
 - [ ] n번의 라운드를 진행해 한 게임을 진행하고 결과를 반환한다
 - [ ] 사용자의 입력을 받아 게임을 진행시키고 게임 결과를 출력한다
