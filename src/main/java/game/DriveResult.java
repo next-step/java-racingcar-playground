@@ -13,4 +13,12 @@ public class DriveResult {
     public String toString() {
         return String.format("%s : %s", name, "-".repeat(drives));
     }
+
+    public int getDrives() {
+        return drives;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
