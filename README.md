@@ -1,26 +1,95 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
+## 클래스 다이어그램
 
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
+```mermaid
+classDiagram
+    class RacingConsole {
+        -RacingGame racingGame
+        -RacingInput input
+        -RacingOutput output
+        
+        +RacingConsole(input, output)
+        +start()
+    }
 
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
+    RacingConsole *-- RacingGame
 
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
+    class RacingGame {
+        -Cars cars
+        -int totalRound
 
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
+        +RacingGame(String[] carNames, int totalRound)
+        +start(int round): GameResult
+    }
 
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
+    RacingGame *-- Cars
 
+    class Cars {
+        -List≺Car≻ cars
+
+        +Cars(String[] carNames)
+        +playRound(): RoundResult
+    }
+
+    Cars o-- Car
+
+    class Car {
+        -String name
+        -int drives
+
+        +Car(String name)
+        +play() : PlayResult
+    }
+
+    RacingGame ..> GameResult
+
+    class GameResult {
+        -List≺RoundResult≻ rounds;
+
+        +GameResult(List≺RoundResult≻ rounds)
+        +toString()
+        -getWinners()
+    }
+
+    GameResult ..> RoundResult
+    Cars ..> RoundResult
+
+    class RoundResult {
+        -List≺PlayResult≻ plays;
+
+        +RoundResult(List≺PlayResult≻ plays)
+        +toString()
+    }
+
+    RoundResult ..> PlayResult
+    Car ..> PlayResult
+
+    class PlayResult {
+        -String carName
+        -int drives
+        
+        +PlayResult(String carName, String drives)
+        +toString()
+    }
+
+    RacingConsole ..> RacingInput
+
+    class RacingInput {
+        +receiveCarNames() : String[]
+        +receiveTotalRound() : int
+    }
+
+    RacingConsole ..> RacingOutput
+
+    class RacingOutput {
+        +printRequestCarNames()
+        +printRequestTotalRound()
+        +printGameResult(GameResult gameResult)
+    }
 ```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
 
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+## 기능 요구사항
+
+- [ ] 60% 확률로 Car를 전진시키고 결과를 반환한다
+- [ ] Cars의 모든 Car를 전진시켜 한 라운드를 진행하고 결과를 반환한다
+- [ ] n번의 라운드를 진행해 한 게임을 진행하고 결과를 반환한다
+- [ ] 사용자의 입력을 받아 게임을 진행시키고 게임 결과를 출력한다
