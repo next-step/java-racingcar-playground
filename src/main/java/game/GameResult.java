@@ -22,7 +22,7 @@ public class GameResult {
         String winners = finalRoundResult.getWinners();
 
         sb.append(winners);
-        sb.append("가 최종 우승헀습니다.\n");
+        sb.append("가 최종 우승헀습니다.");
 
         return sb.toString();
     }

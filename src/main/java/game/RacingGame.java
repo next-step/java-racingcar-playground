@@ -4,8 +4,9 @@ public class RacingGame {
     private Cars cars;
     private int totalRound;
 
-    public RacingGame(String[] carNames, int totalRound) {
-        this.cars = new Cars(carNames);
+    public RacingGame(String carNames, int totalRound) {
+        String[] carNamesArr = carNames.split(",");
+        this.cars = new Cars(carNamesArr);
         this.totalRound = totalRound;
     }
 
@@ -21,6 +22,3 @@ public class RacingGame {
     }
 }
 
-class Main {
-
-}
