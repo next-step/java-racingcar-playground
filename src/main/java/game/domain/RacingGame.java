@@ -1,4 +1,8 @@
-package game;
+package game.domain;
+
+import game.domain.Cars;
+import game.domain.GameResult;
+import game.domain.RoundResult;
 
 public class RacingGame {
     private Cars cars;

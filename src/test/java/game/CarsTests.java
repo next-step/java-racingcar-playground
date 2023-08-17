@@ -1,5 +1,7 @@
 package game;
 
+import game.domain.Cars;
+import game.domain.RoundResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

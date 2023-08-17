@@ -1,5 +1,6 @@
 package game;
 
+import game.domain.RacingGame;
 import org.junit.jupiter.api.Test;
 
 public class RacingGameTests {

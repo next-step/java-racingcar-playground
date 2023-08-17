@@ -1,4 +1,4 @@
-package game;
+package game.ui;
 
 public interface RacingInput {
     String receiveCarNames();

@@ -1,4 +1,7 @@
-package game;
+package game.ui;
+
+import game.domain.GameResult;
+import game.domain.RacingGame;
 
 public class RacingConsole {
     private RacingInput racingInput;
