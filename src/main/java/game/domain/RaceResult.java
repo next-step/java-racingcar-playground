@@ -27,6 +27,7 @@ public class RaceResult {
     private int getHighestPosition() {
         return driveResults.stream()
                 .mapToInt(DriveResult::getPosition)
-                .sum();
+                .max()
+                .getAsInt();
     }
 }
