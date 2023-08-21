@@ -72,9 +72,9 @@ classDiagram
     RacingGame ..> GameResult
 
     class GameResult {
-        -List≺RaceResult≻ rounds;
+        -List≺RaceResult≻ raceResults;
 
-        +GameResult(List≺RaceResult≻ races)
+        +GameResult(List≺RaceResult≻ raceResults)
         +toString()
         -getWinners()
     }
@@ -83,9 +83,9 @@ classDiagram
     Cars ..> RaceResult
 
     class RaceResult {
-        -List≺DriveResult≻ drives;
+        -List≺DriveResult≻ driveResults;
 
-        +RaceResult(List≺DriveResult≻ drives)
+        +RaceResult(List≺DriveResult≻ driveResults)
         +toString()
     }
 
@@ -119,6 +119,6 @@ classDiagram
 ## 기능 요구사항
 
 - [x] 60% 확률로 Car를 전진시키고 결과를 반환한다
-- [ ] Cars의 모든 Car를 전진시켜 한 라운드를 진행하고 결과를 반환한다
+- [x] Cars의 모든 Car를 전진시켜 한 라운드를 진행하고 결과를 반환한다
 - [ ] n번의 라운드를 진행해 한 게임을 진행하고 결과를 반환한다
 - [ ] 사용자의 입력을 받아 게임을 진행시키고 게임 결과를 출력한다

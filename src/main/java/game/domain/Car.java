@@ -14,7 +14,6 @@ public class Car {
             position.goForward();
         }
 
-        System.out.println(position.toString());
         return new DriveResult(this.name, this.position);
     }
 }
