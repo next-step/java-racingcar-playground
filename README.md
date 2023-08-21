@@ -6,7 +6,7 @@ classDiagram
         -RacingGame racingGame
         -RacingInput input
         -RacingOutput output
-        
+
         +RacingConsole(input, output)
         +start()
     }
@@ -36,13 +36,14 @@ classDiagram
         -Position position
 
         +Car(String name)
+        +drive(): DriveResult
         +drive(DrivableStrategy drivableStrategy) : DriveResult
     }
-    
+
     Car ..> Name
     class Name {
         String name
-        
+
         +Name(String name)
         +toString(): String
     }
@@ -94,7 +95,7 @@ classDiagram
     class DriveResult {
         -Name name
         -Position position
-        
+
         +DriveResult(Car car)
         +toString()
     }
@@ -117,7 +118,7 @@ classDiagram
 
 ## 기능 요구사항
 
-- [ ] 60% 확률로 Car를 전진시키고 결과를 반환한다
+- [x] 60% 확률로 Car를 전진시키고 결과를 반환한다
 - [ ] Cars의 모든 Car를 전진시켜 한 라운드를 진행하고 결과를 반환한다
 - [ ] n번의 라운드를 진행해 한 게임을 진행하고 결과를 반환한다
 - [ ] 사용자의 입력을 받아 게임을 진행시키고 게임 결과를 출력한다
