@@ -14,4 +14,19 @@ public class RaceResult {
     public String toString() {
         return driveResults.stream().map(DriveResult::toString).collect(Collectors.joining("\n"));
     }
+
+    public String getWinners() {
+        int highestPosition = getHighestPosition();
+
+        return driveResults.stream()
+                .filter(driveResult -> driveResult.isHighestPosition(highestPosition))
+                .map(DriveResult::getName)
+                .collect(Collectors.joining(", "));
+    }
+
+    private int getHighestPosition() {
+        return driveResults.stream()
+                .mapToInt(DriveResult::getPosition)
+                .sum();
+    }
 }

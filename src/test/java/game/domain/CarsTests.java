@@ -20,11 +20,11 @@ public class CarsTests {
     void 차들을_모두_전진시키거나_전진시키지_않는다() {
         RaceResult raceResult = cars.race(() -> false);
         int[] positions = getPositions(raceResult);
-        assertArrayEquals(positions, new int[] { 0, 0, 0});
+        assertArrayEquals(new int[] { 0, 0, 0 }, positions);
 
         raceResult = cars.race(() -> false);
         positions = getPositions(raceResult);
-        assertArrayEquals(positions, new int[] { 0, 0, 0});
+        assertArrayEquals(new int[] { 0, 0, 0 }, positions);
     }
 
     private int[] getPositions(RaceResult raceResult) {

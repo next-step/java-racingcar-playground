@@ -26,11 +26,11 @@ public class CarTests {
     void MovingStrategy의_반환값에_따라_전진하거나_움직이지_않는다() {
         DriveResult driveResult = car.drive(() -> false);
         int position = getPosition(driveResult);
-        assertEquals(position, 0);
+        assertEquals(0, position);
 
         driveResult = car.drive(() -> true);
         position = getPosition(driveResult);
-        assertEquals(position, 1);
+        assertEquals(1, position);
     }
 
     private int getPosition(DriveResult driveResult) {
