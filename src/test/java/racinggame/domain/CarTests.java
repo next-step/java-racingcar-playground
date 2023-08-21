@@ -1,6 +1,7 @@
-package game.domain;
+package racinggame.domain;
 
-import game.domain.Car;
+import racinggame.domain.car.Car;
+import racinggame.domain.dto.DriveResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

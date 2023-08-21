@@ -1,4 +1,4 @@
-package game.domain;
+package racinggame.domain.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;

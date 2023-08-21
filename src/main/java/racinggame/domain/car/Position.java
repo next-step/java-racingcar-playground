@@ -1,4 +1,4 @@
-package game.domain;
+package racinggame.domain.car;
 
 public class Position {
     private static final String POSITION_SYMBOL = "-";

@@ -1,4 +1,4 @@
-package game.ui;
+package racinggame.ui;
 
 import java.io.BufferedReader;
 import java.io.IOException;

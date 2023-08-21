@@ -1,8 +1,8 @@
-package game.ui;
+package racinggame.ui;
 
-import game.domain.GameResult;
-import game.domain.RacingGame;
-import game.domain.SixtyPercentChanceDrivableStrategy;
+import racinggame.domain.dto.GameResult;
+import racinggame.domain.RacingGame;
+import racinggame.domain.car.strategy.SixtyPercentChanceDrivableStrategy;
 
 public class RacingConsole {
     private RacingInput racingInput;

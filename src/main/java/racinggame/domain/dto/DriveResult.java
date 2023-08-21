@@ -1,4 +1,7 @@
-package game.domain;
+package racinggame.domain.dto;
+
+import racinggame.domain.car.Name;
+import racinggame.domain.car.Position;
 
 public class DriveResult {
     private Name name;

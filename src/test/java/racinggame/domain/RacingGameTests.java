@@ -1,9 +1,12 @@
-package game.domain;
+package racinggame.domain;
 
+import racinggame.domain.car.Car;
+import racinggame.domain.dto.DriveResult;
+import racinggame.domain.dto.GameResult;
+import racinggame.domain.dto.RaceResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

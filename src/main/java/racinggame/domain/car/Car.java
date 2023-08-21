@@ -1,4 +1,7 @@
-package game.domain;
+package racinggame.domain.car;
+
+import racinggame.domain.car.strategy.DrivableStrategy;
+import racinggame.domain.dto.DriveResult;
 
 public class Car {
     Name name;

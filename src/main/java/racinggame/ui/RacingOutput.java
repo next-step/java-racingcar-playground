@@ -1,6 +1,6 @@
-package game.ui;
+package racinggame.ui;
 
-import game.domain.GameResult;
+import racinggame.domain.dto.GameResult;
 
 public interface RacingOutput {
     void printRequestCarNames();

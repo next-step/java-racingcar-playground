@@ -1,4 +1,9 @@
-package game.domain;
+package racinggame.domain.car;
+
+import racinggame.domain.car.Car;
+import racinggame.domain.car.strategy.DrivableStrategy;
+import racinggame.domain.dto.DriveResult;
+import racinggame.domain.dto.RaceResult;
 
 import java.util.ArrayList;
 import java.util.Arrays;
