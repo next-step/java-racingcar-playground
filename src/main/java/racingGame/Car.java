@@ -10,12 +10,12 @@ public class Car {
 
     private final int GO_NUM = 4;
 
+
     public Car(String carNm) {
         this.car = new CarNameLimit(carNm);
     }
 
-    public void play() {
-
+    public void goStop() {
         if (getRandomNum() >= GO_NUM) {
             this.line += 1;
         }
@@ -25,7 +25,7 @@ public class Car {
     public int getRandomNum() {
         Random random = new Random();
 
-        int randomNumber = random.nextInt(9) + 1;
+        int randomNumber = random.nextInt(9);
 
         return randomNumber;
     }

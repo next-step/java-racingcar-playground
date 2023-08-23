@@ -1,7 +1,6 @@
 package racingGame;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Cars {
@@ -21,7 +20,7 @@ public class Cars {
         String[] strCars = carList.split(",");
 
         for (int i = 0; i < strCars.length; i++) {
-            String car = strCars[i]; // 각 요소에 접근
+            String car = strCars[i];
             carsList.add(new Car(car));
         }
 
