@@ -11,7 +11,7 @@ public class StringCalculatorTest {
     @CsvSource(value = {"1,2,3*6", "1:2:3*6", "//A\n1A2A3*6", "1:-2:3*5"}, delimiter = '*')
     void calculateTest(String value, String expected) {
         //given
-        StringCalculator stringCalculator = new StringCalculator();
+        StringCalculator stringCalculator = new StringCalculator(new StringParser());
         //when
         int actual = stringCalculator.calculate(value);
         //then
