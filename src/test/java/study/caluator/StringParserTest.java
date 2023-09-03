@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import study.caluator.StringParser;
 
 public class StringParserTest {
 
@@ -50,14 +49,6 @@ public class StringParserTest {
         assertThatThrownBy(() -> stringParser.processMinusValue(parsedInput))
             .isInstanceOf(RuntimeException.class);
     }
-
-
-
-
-
-
-
-
 
 
 }

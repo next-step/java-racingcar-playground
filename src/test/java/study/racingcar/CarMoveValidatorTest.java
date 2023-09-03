@@ -5,22 +5,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class RacingCarTest {
+public class CarMoveValidatorTest {
 
     @Test
-    @DisplayName("경주차는 random숫자가 4 이상이면 움직인다.")
-    void moveTest() {
-
+    @DisplayName("랜덤값이 4 이상이면 움직일 수 있습니다.")
+    void validMoveTest() {
         // given
-        RacingCar racingCar = RacingCar.create("racingCar");
         RandomNumberCreator randomNumberCreator = new RandomNumberCreator();
+        CarMoveValidator carMoveValidator = new CarMoveValidator();
         int randomNumber = randomNumberCreator.createZeroToNine();
 
         // when
-        racingCar.move(randomNumber);
+        boolean canMove = carMoveValidator.validMove(randomNumber);
 
         // then
-        assertThat(racingCar.getMoveCnt()).isEqualTo(randomNumber >= 4 ? 1 : 0);
+        assertThat(canMove).isEqualTo(randomNumber >= 4);
     }
 
 }
