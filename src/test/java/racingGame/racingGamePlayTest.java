@@ -7,18 +7,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class racingGamePlayTest {
 
-
     @Test
     void 자동차_4이상일때_전진() {
-        Cars cars = new Cars("pobi,crong,honux");
+        Car car = new Car("pobi");
 
-        assertThat(cars.stopPlayCheck(4)).isEqualTo(CarStatus.PLAY);
+        assertThat(car.stopPlayCheck(4)).isEqualTo(CarStatus.PLAY);
     }
 
     @Test
     void 자동차_3이하일때_스탑() {
-        Cars cars = new Cars("pobi,crong,honux");
+//        Cars cars = new Cars("pobi,crong,honux");
+        Car car = new Car("pobi");
 
-        assertThat(cars.stopPlayCheck(3)).isEqualTo(CarStatus.STOP);
+        assertThat(car.stopPlayCheck(3)).isEqualTo(CarStatus.STOP);
     }
 }

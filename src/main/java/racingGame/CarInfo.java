@@ -1,12 +1,12 @@
 package racingGame;
 
-public class CarNameLimit {
+public class CarInfo {
 
     private final int NAME_LIMIT_NUM = 5;
 
     private final String carName;
 
-    public CarNameLimit(String carNm) {
+    public CarInfo(String carNm) {
         if (carNm.length() > NAME_LIMIT_NUM) {
             throw new RuntimeException();
         }

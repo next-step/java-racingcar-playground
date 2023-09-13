@@ -27,12 +27,4 @@ public class Cars {
         return carsList;
     }
 
-    public CarStatus stopPlayCheck(int i) {
-
-        if (i < GO_NUM) {
-            return CarStatus.STOP;
-        }
-
-        return CarStatus.PLAY;
-    }
 }
