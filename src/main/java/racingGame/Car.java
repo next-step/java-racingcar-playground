@@ -12,6 +12,8 @@ public class Car {
 
     private final int GO_NUM = 4;
 
+    private final Random random = new Random();
+
     public Car(String carNm) {
         this.carName = limitCheck(carNm);
     }
@@ -39,11 +41,7 @@ public class Car {
     }
 
     public int getRandomNum() {
-        Random random = new Random();
-
-        int randomNumber = random.nextInt(10);
-
-        return randomNumber;
+        return random.nextInt(10);
     }
 
 }
