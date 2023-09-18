@@ -27,4 +27,33 @@ public class Cars {
         return carsList;
     }
 
+    public Object play() {
+        return "pobi";
+    }
+
+    public String lineCheck(List<Integer> list) {
+
+        List<Integer> fastCarList = new ArrayList<>();
+
+        for(int i = 0; i < cars.size(); i++) {
+            fastCarList.add(cars.get(i).play(list.get(i)));
+        }
+
+        int topNum = 0;
+        StringBuilder carsListNm = new StringBuilder();
+
+        for(int i = 0; i < fastCarList.size(); i++) {
+            if (topNum < fastCarList.get(i)) {
+                topNum = fastCarList.get(i);
+                carsListNm = new StringBuilder(cars.get(i).carName);
+            } else if (topNum == fastCarList.get(i)) {
+                carsListNm.append(",").append(cars.get(i).carName);
+            }
+
+        }
+
+        return carsListNm.toString();
+    }
+
+
 }

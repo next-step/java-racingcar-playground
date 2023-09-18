@@ -6,7 +6,7 @@ public class Car {
 
     private final int NAME_LIMIT_NUM = 5;
 
-    private final String carName;
+    public String carName;
 
     public int line = 1;
 
@@ -28,6 +28,6 @@ public class Car {
             return line;
         }
 
-        return line++;
+        return ++line;
     }
 }
