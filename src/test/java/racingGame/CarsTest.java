@@ -30,6 +30,11 @@ public class CarsTest {
 
     @Test
     void 자동차_여러개중_가장_앞에_있는거_가져오기() {
-//        assertThat("pobi").isEqualTo(cars.play(Arrays.asList(4,3,3)));
+        String carName = cars.play(
+                    Arrays.asList(4,3,3)
+                )
+                .get(0)
+                .carName;
+        assertThat("pobi").isEqualTo(carName);
     }
 }

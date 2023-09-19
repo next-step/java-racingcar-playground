@@ -27,8 +27,14 @@ public class Cars {
         return carsList;
     }
 
-    public Object play() {
-        return "pobi";
+    public List<Car> play(List<Integer> list) {
+        List<Car> carList = new ArrayList<>();
+        String commaCar = lineCheck(list);
+        for (String s : commaCar.split(",")) {
+            carList.add(new Car(s));
+        }
+
+        return carList;
     }
 
     public String lineCheck(List<Integer> list) {
