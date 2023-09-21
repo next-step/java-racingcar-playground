@@ -1,5 +1,6 @@
 package racingGame;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Car {
@@ -30,4 +31,13 @@ public class Car {
 
         return ++line;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return line == car.line;
+    }
+
 }
