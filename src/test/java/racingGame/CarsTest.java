@@ -25,16 +25,12 @@ public class CarsTest {
 
     @Test
     void 자동차_객체중_라인이_가장_큰값_찾기() {
-        assertThat("pobi").isEqualTo(cars.lineCheck(Arrays.asList(4,3,3)));
+        assertThat(cars.lineCheck(Arrays.asList(4,4,3))).isEqualTo("pobi,crong");
     }
 
     @Test
-    void 자동차_여러개중_가장_앞에_있는거_가져오기() {
-        String carName = cars.play(
-                    Arrays.asList(4,3,3)
-                )
-                .get(0)
-                .carName;
-        assertThat("pobi").isEqualTo(carName);
+    void 자동차_게임_시작후_우승자_알려주기() {
+        assertThat(cars.play(5)).isEqualTo("pobi,crong");
     }
+
 }

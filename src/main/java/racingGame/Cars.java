@@ -2,12 +2,13 @@ package racingGame;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Cars {
 
-    private final int GO_NUM = 4;
-
     private List<Car> cars;
+
+    private Random random = new Random();
 
     public Cars(String carList) {
         this.cars = makeCar(carList);
@@ -25,16 +26,6 @@ public class Cars {
         }
 
         return carsList;
-    }
-
-    public List<Car> play(List<Integer> list) {
-        List<Car> carList = new ArrayList<>();
-        String commaCar = lineCheck(list);
-        for (String s : commaCar.split(",")) {
-            carList.add(new Car(s));
-        }
-
-        return carList;
     }
 
     public String lineCheck(List<Integer> list) {
@@ -62,4 +53,33 @@ public class Cars {
     }
 
 
+    public String play(int repeatNum) {
+
+        List<Integer> randomNumList = randomNumList();
+        String lastWinner = "";
+        for (int i = 0; i < repeatNum; i++) {
+            lastWinner = lineCheck(randomNumList);
+            printPlay();
+        }
+
+        return lastWinner;
+    }
+
+    private void printPlay() {
+        for(int i = 0; i < this.cars.size(); i++) {
+            System.out.println(this.cars.get(i).carName + " : " + this.cars.get(i).line);
+        }
+    }
+
+    private List<Integer> randomNumList() {
+        List<Integer> randomNumList = new ArrayList<>();
+
+        int min = 0;
+        int max = 9;
+        for(int i = 0; i < this.cars.size(); i++) {
+            int carRandomNum = random.nextInt(max - min + 1) + min;
+            randomNumList.add(carRandomNum);
+        }
+        return randomNumList;
+    }
 }
