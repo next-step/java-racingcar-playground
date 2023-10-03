@@ -1,3 +1,5 @@
+package car;
+
 import java.util.List;
 
 public class OutputView {

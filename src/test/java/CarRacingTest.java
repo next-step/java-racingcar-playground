@@ -1,3 +1,6 @@
+import car.Car;
+import car.Cars;
+import car.InputView;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -6,7 +9,7 @@ import java.util.Random;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-public class CarRacingTest {
+class CarRacingTest {
     @Test
     void inputByComma(){
         InputView inputView = new InputView();

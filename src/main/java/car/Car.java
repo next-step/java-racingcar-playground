@@ -1,6 +1,9 @@
+package car;
+
 import java.util.Random;
 
 public class Car {
+    private static final int MINIMUM_MOVING_STANDARD = 4;
     private final String name;
     private int location = 1;
     public Car(String name) {
@@ -13,8 +16,12 @@ public class Car {
     }
 
     public void move(){
+        if (MINIMUM_MOVING_STANDARD <= getRandomNum()) this.location++;
+    }
+
+    protected int getRandomNum(){
         Random random = new Random();
-        if (random.nextInt(10) >= 4) this.location++;
+        return random.nextInt(10);
     }
 
     public String getName() {

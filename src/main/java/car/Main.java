@@ -1,3 +1,9 @@
+package car;
+
+import car.CarController;
+import car.InputView;
+import car.OutputView;
+
 import java.io.IOException;
 
 public class Main {
