@@ -1,4 +1,3 @@
-import model.Car;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -19,5 +18,12 @@ public class CarTest {
         Assertions.assertTrue(car.toString().contains("-"));
     }
 
-
+    @Test
+    void play() {
+        Car car = new Car("exam");
+        car.play(4);
+        Assertions.assertEquals(1, car.getLocation());
+        car.play(3);
+        Assertions.assertEquals(1, car.getLocation());
+    }
 }
