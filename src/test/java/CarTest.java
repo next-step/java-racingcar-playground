@@ -27,4 +27,10 @@ public class CarTest {
         car.play(3);
         Assertions.assertEquals(1, car.getLocation());
     }
+
+    @Test
+    void sting() {
+        Car car = new Car("hi");
+        Assertions.assertEquals("hi",car.getName());
+    }
 }
